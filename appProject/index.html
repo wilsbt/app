@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <link rel="stylesheet" href="scripts/styles.css">
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <!--todo-->
+        </nav>
+        <div id="select_area">
+            <fieldset>
+                <legend><button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo1">Respitory</button></legend>
+                <div id="demo1" class="collapse">
+                    <h1>List of Repositories</h1>
+                    <form>
+                        <div class="form-group">
+                          <label for="sel1">Select list (select one):</label>
+                            <select class="form-control" id="sel1">
+                                <option>R1</option>
+                                <option>R2</option>
+                                <option>R3</option>
+                                <option>R4</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+            <fieldset>
+                    <legend><button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Preservation</button></legend>
+                    <div id="demo" class="collapse">
+
+                    <h1>List of Preservation</h1>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle" data-toggle="button" aria-pressed="false" autocomplete="off">P1</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P2</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P3</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P4</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P5</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P6</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P7</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P8</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P9</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P10</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P11</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P12</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P13</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P14</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P15</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P16</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P17</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P18</button>
+                    <button class="button"
+                    class="btn btn-primary btn-lg btn-circle">P19</button>
+                    </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Other <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Kitchen</a></li>
+                                <li><a href="#">Admin</a></li>
+                            </ul>
+                    </div>
+                    
+                </legend>
+            </fieldset>
+            <fieldset>
+                    <legend>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Location <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#">Repository</a></li>
+                              <li><a href="#">Preservation</a></li>
+                              <li><a href="#">Other</a></li>
+                            </ul>
+                          </div>
+                    </legend>
+                    <!--<fieldset>
+                            <legend><button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo1">Respitory</button></legend>
+                            <div id="demo1" class="collapse">
+                                <h1>List of Repositories</h1>
+                                <form>
+                                    <div class="form-group">
+                                      <label for="sel1">Select list (select one):</label>
+                                        <select class="form-control" id="sel1">
+                                            <option>R1</option>
+                                            <option>R2</option>
+                                            <option>R3</option>
+                                            <option>R4</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>-->
+            </fieldset>
+        </div>
+        <div id="displayMap">
+            <canvas>
+
+            </canvas>
+        </div>
+        <div id="information">
+
+        </div>
+        <div id="summary">
+            <button>Save</button>
+            <button>Reset</button>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
