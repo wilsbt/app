@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Konva Drag and Drop an Image Demo</title>
+    <style>
+        body {
+            margin: 10;
+            padding: 0;
+            overflow: hidden;
+            background-color: #F0F0F0;
+        }
+        #container {
+            margin-top: 50px;
+            border: 1px solid red;
+            overflow: scroll;
+        }
+
+          #navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+</head>
+<body>
+        <nav>
+                <!--todo-->
+                
+                <div id="navbar">
+                    <a class="active" href="/main/index.html">Location</a>
+                    <a href="#details">Details</a>
+                    <a href="#summary">Summary</a>
+                    <a href="/camera/camera.html">Camera</a>
+                </div>
+            </nav>
+    <h1>Konva Test</h1>
+    <div id="container"></div>
+    <p>mouse position</p>
+
+    <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <script>
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+
+        function drawImage(imageObj) {
+            var stage = new Konva.Stage({
+                container: 'container',
+                width: width,
+                height: height
+            });
+
+            var layer = new Konva.Layer();
+            //map image
+            var mapImg = new Konva.Image({
+                image: mapImageObj,
+                x: 0,
+                y: 0,
+                width: 750,
+                height: 1334,
+                draggable: false
+            });
+            //pin image
+            var pinImg = new Konva.Image({
+                image: pinImageObj,
+                x: stage.getWidth() / 2,
+                y: stage.getHeight() / 2,
+                width: 32,
+                height: 32,
+                draggable: true
+            });
+
+            //add cursor styling to pin image
+            pinImg.on('mouseover', function() {
+                document.body.style.cursor = 'pointer';
+            });
+            pinImg.on('mouseout', function() {
+                document.body.style.cursor = 'default';
+            });
+            
+            layer.add(mapImg);
+            layer.add(pinImg);
+            stage.add(layer);
+        }//end drawImage()
+
+        var mapImageObj = new Image();
+        mapImageObj.onload = function() {
+            drawImage(this);
+        };
+        mapImageObj.src = "images/maps/Repository01Map.jpg";
+
+        var pinImageObj = new Image();
+        pinImageObj.onload = function() {
+            drawImage(this);
+        };
+        pinImageObj.src = "images/pin.png";
+    </script>
+
+</body>
+</html>
